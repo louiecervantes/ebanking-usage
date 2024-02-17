@@ -14,8 +14,9 @@ from sklearn.metrics import classification_report
 # Define the Streamlit app
 def app():
     
-    st.title("""E-banking Usage level and Influence on Spending 
-             Habits Among College of Business and Management Students""")
+    text = """E-banking Usage level and Influence on Spending 
+        Habits Among College of Business and Management Students"""
+    st.title(text)
     
     st.subheader('by Louie F. Cervantes M.Eng., WVSU College of ICT')
  
@@ -65,7 +66,7 @@ def app():
 
         # Shuffle the dataframe
         df = df.sample(frac=1)
-        
+
         #load the data and the labels
         X = df.values[:,0:-1]
         y = df.values[:,-1]          
