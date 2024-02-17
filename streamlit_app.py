@@ -61,11 +61,12 @@ def app():
         
         df = pd.read_csv(dbfile, header=0)
         st.subheader('The Dataset')
-        # display the dataset
-        st.dataframe(df, use_container_width=True)  
 
         # Shuffle the dataframe
         df = df.sample(frac=1)
+
+        # display the dataset
+        st.dataframe(df, use_container_width=True)  
 
         #load the data and the labels
         X = df.values[:,0:-1]
@@ -77,10 +78,11 @@ def app():
         
         clf.fit(X_train,y_train)
         y_test_pred = clf.predict(X_test)
+
         st.subheader('Confusion Matrix')
-        st.write('Confusion Matrix')
         cm = confusion_matrix(y_test, y_test_pred)
         st.text(cm)
+
         st.subheader('Performance Metrics')
         st.text(classification_report(y_test, y_test_pred))
     
