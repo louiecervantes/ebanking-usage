@@ -63,6 +63,9 @@ def app():
         # display the dataset
         st.dataframe(df, use_container_width=True)  
 
+        # Shuffle the dataframe
+        df = df.sample(frac=1)
+        
         #load the data and the labels
         X = df.values[:,0:-1]
         y = df.values[:,-1]          
