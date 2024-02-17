@@ -54,7 +54,7 @@ def app():
         clf = GaussianNB()
     
     # Create the logistic regression 
-    dbfile = 'encodeded-ebanking.csv'
+    dbfile = 'encoded-ebanking.csv'
         
     if st.button('Start'):
         
