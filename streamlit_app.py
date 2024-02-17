@@ -50,7 +50,7 @@ def app():
     options = ['Gaussian Naive Bayes', 'Bernoulli Naive Bayes']
     selected_option = st.selectbox('Select the classifier', options)
     if selected_option=='Bernoulli Naive Bayes':
-        clf = BernoulliNB()
+        clf = BernoulliNB(alpha=0.01, binarize=True, fit_prior=True)
     else:
         clf = GaussianNB()
     
