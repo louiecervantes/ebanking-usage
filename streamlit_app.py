@@ -69,7 +69,7 @@ def app():
 
         # plot the graphs
         st.subheader('Distribution by Sex')
-        
+
         fig, ax = plt.subplots(figsize=(5, 2))
 
         # Create the countplot with clear title and legend
@@ -84,10 +84,9 @@ def app():
         ax.set_title("Distribution of Sex", fontsize=14)
         ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
 
-
         # Display the plot
         plt.tight_layout()  # Prevent overlapping elements
-        st.pylot(fig)
+        st.pyplot(fig)
 
         #load the data and the labels
         X = df.values[:,0:-1]
