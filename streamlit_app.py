@@ -71,13 +71,6 @@ def app():
 
         # Add the title
         ax.set_title('Plot of Sex Distribution')
-
-        # Add the counts to the bars
-        for p in enumerate(ax.patches):
-            ax.annotate(f'{p.get_width():,.0f}',  # Format count as integer
-                        (p.get_x() + p.get_width() / 2., p.get_y() + p.get_height() / 2.),
-                        ha='center', va='center', fontsize=10, fontweight='bold')
-
         # Display the plot using Streamlit
         st.pyplot(fig)
 
@@ -89,11 +82,6 @@ def app():
 
         # Set title
         ax.set_title('Plot of Income Distribution')
-        # Add the counts to the bars
-        for p in ax.patches:
-            ax.annotate(f'{p.get_width():,.0f}',  # Format count as integer
-                        (p.get_x() + p.get_width() / 2., p.get_y() + p.get_height() / 2.),
-                        ha='center', va='center', fontsize=10, fontweight='bold')
         st.pyplot(fig)
 
         # Create a new figure and axes object
@@ -104,9 +92,7 @@ def app():
 
         # Set title
         ax.set_title('Plot of E-banking Usage Distribution')
-        ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
         st.pyplot(fig)
-
 
         #load the data and the labels
         X = df.values[:,0:-1]
