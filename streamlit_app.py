@@ -75,7 +75,6 @@ def app():
         x="count",  # Count occurrences for each "Sex" value in df
         order=df["Sex"].value_counts().index,  # Order bars based on counts
         data=df.value_counts("Sex").reset_index(name="count"),  # Reshape data for counting
-        hue = "count",
         palette="gray"  # Set color palette
         )
         ax.set_title("Distribution of Sex", fontsize=14)
