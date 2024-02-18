@@ -14,8 +14,7 @@ from sklearn.metrics import classification_report
 # Define the Streamlit app
 def app():
     
-    text = """E-banking Usage level and Influence on Spending 
-        Habits Among College of Business and Management Students"""
+    text = """E-banking Usage and Influence on Spending Habits"""
     st.title(text)
     
     st.subheader('by Louie F. Cervantes M.Eng., WVSU College of ICT')
