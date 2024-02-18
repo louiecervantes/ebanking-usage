@@ -69,19 +69,18 @@ def app():
 
         fig, ax = plt.subplots(figsize=(5, 2))
 
-        # Create the countplot with clear title and legend
-        p = sns.barplot(
-        y="Sex",  # Specify "Sex" as the y-axis for horizontal orientation
-        x="count",  # Count occurrences for each "Sex" value in df
-        order=df["Sex"].value_counts().index,  # Order bars based on counts
-        data=df.value_counts("Sex").reset_index(name="count"),  # Reshape data for counting
-        palette="gray"  # Set color palette
-        )
-        ax.set_title("Distribution of Sex", fontsize=14)
-        ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
+        # Create a new figure and axes object
+        fig, ax = plt.subplots(figsize=(10, 6))
 
-        # Display the plot
-        plt.tight_layout()  # Prevent overlapping elements
+        # Create a horizontal barplot using seaborn
+        sns.countplot(x='Sex', data=data, hue='Sex', palette='bright', ax=ax, orient='h')
+
+        # Remove axis labels (optional)
+        # ax.set_xlabel('')
+        # ax.set_ylabel('')
+
+        # Set title
+        ax.set_title('Horizontal Barplot of Usage Level Distribution')
         st.pyplot(fig)
 
         #load the data and the labels
