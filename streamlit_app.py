@@ -81,6 +81,7 @@ def app():
 
         # Set title
         ax.set_title('Barplot of Sex Distribution')
+        ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
         st.pyplot(fig)
 
         #load the data and the labels
