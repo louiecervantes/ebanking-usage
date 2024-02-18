@@ -75,12 +75,21 @@ def app():
         # Create a horizontal barplot using seaborn
         sns.countplot(y='Sex', data=df, hue='Sex', palette='bright', ax=ax)
 
-        # Remove axis labels (optional)
-        # ax.set_xlabel('')
-        # ax.set_ylabel('')
+        # Set title
+        ax.set_title('Plot of Sex Distribution')
+        ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
+        st.pyplot(fig)
+
+        fig, ax = plt.subplots()
+
+        # Create a new figure and axes object
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        # Create a horizontal barplot using seaborn
+        sns.countplot(y='Income', data=df, hue='Income', palette='bright', ax=ax)
 
         # Set title
-        ax.set_title('Barplot of Sex Distribution')
+        ax.set_title('Plot of Income Distribution')
         ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
         st.pyplot(fig)
 
