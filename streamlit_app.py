@@ -64,21 +64,21 @@ def app():
         # display the dataset
         st.dataframe(df, use_container_width=True)  
 
-        # plot the graphs
-        # Create a new figure and axes object
         fig, ax = plt.subplots()
 
-        # Create a horizontal barplot using seaborn
+        # Create the horizontal barplot
         sns.countplot(y='Sex', data=df, hue='Sex', palette='bright', ax=ax)
 
-        # Set title
+        # Add the title
         ax.set_title('Plot of Sex Distribution')
+
         # Add the counts to the bars
         for p in ax.patches:
             ax.annotate(f'{p.get_width():,.0f}',  # Format count as integer
                         (p.get_x() + p.get_width() / 2., p.get_y() + p.get_height() / 2.),
                         ha='center', va='center', fontsize=10, fontweight='bold')
-        st.pyplot(fig)
+
+        # Display the plot using Streamlit
         st.pyplot(fig)
 
         # Create a new figure and axes object
