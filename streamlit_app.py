@@ -65,7 +65,6 @@ def app():
         st.dataframe(df, use_container_width=True)  
 
         # plot the graphs
-
         # Create a new figure and axes object
         fig, ax = plt.subplots()
 
@@ -78,7 +77,7 @@ def app():
         st.pyplot(fig)
 
         # Create a new figure and axes object
-        fig, ax = plt.subplots(figsize=()
+        fig, ax = plt.subplots()
 
         # Create a horizontal barplot using seaborn
         sns.countplot(y='Income', data=df, hue='Income', palette='bright', ax=ax)
