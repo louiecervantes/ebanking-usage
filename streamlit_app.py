@@ -65,12 +65,9 @@ def app():
         st.dataframe(df, use_container_width=True)  
 
         # plot the graphs
-        st.subheader('Distribution by Sex')
-
-        fig, ax = plt.subplots()
 
         # Create a new figure and axes object
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots()
 
         # Create a horizontal barplot using seaborn
         sns.countplot(y='Sex', data=df, hue='Sex', palette='bright', ax=ax)
@@ -80,10 +77,8 @@ def app():
         ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
         st.pyplot(fig)
 
-        fig, ax = plt.subplots()
-
         # Create a new figure and axes object
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots(figsize=()
 
         # Create a horizontal barplot using seaborn
         sns.countplot(y='Income', data=df, hue='Income', palette='bright', ax=ax)
@@ -92,6 +87,18 @@ def app():
         ax.set_title('Plot of Income Distribution')
         ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
         st.pyplot(fig)
+
+        # Create a new figure and axes object
+        fig, ax = plt.subplots()
+
+        # Create a horizontal barplot using seaborn
+        sns.countplot(y='usagelevel', data=df, hue='usagelevel', palette='bright', ax=ax)
+
+        # Set title
+        ax.set_title('Plot of E-banking Usage Distribution')
+        ax.bar_label(ax.containers[0])  # Add frequency counts to the bars
+        st.pyplot(fig)
+
 
         #load the data and the labels
         X = df.values[:,0:-1]
