@@ -61,9 +61,6 @@ def app():
         df = pd.read_csv(dbfile, header=0)
         st.subheader('The Dataset')
 
-        # Shuffle the dataframe
-        df = df.sample(frac=1)
-
         # display the dataset
         st.dataframe(df, use_container_width=True)  
 
