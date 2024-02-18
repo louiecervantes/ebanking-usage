@@ -73,7 +73,7 @@ def app():
         fig, ax = plt.subplots(figsize=(10, 6))
 
         # Create a horizontal barplot using seaborn
-        sns.countplot(x='Sex', data=data, hue='Sex', palette='bright', ax=ax, orient='h')
+        sns.countplot(x='Sex', data=df, hue='Sex', palette='bright', ax=ax, orient='h')
 
         # Remove axis labels (optional)
         # ax.set_xlabel('')
