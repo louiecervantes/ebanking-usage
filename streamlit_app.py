@@ -67,7 +67,7 @@ def app():
         # plot the graphs
         st.subheader('Distribution by Sex')
 
-        fig, ax = plt.subplots(figsize=(5, 2))
+        fig, ax = plt.subplots()
 
         # Create a new figure and axes object
         fig, ax = plt.subplots(figsize=(10, 6))
