@@ -73,14 +73,14 @@ def app():
         fig, ax = plt.subplots(figsize=(10, 6))
 
         # Create a horizontal barplot using seaborn
-        sns.countplot(x='Sex', data=df, hue='Sex', palette='bright', ax=ax, orient='h')
+        sns.countplot(y='Sex', data=df, hue='Sex', palette='bright', ax=ax)
 
         # Remove axis labels (optional)
         # ax.set_xlabel('')
         # ax.set_ylabel('')
 
         # Set title
-        ax.set_title('Horizontal Barplot of Usage Level Distribution')
+        ax.set_title('Barplot of Sex Distribution')
         st.pyplot(fig)
 
         #load the data and the labels
